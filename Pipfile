@@ -7,6 +7,24 @@ verify_ssl = true
 
 [packages]
 django = "*"
+django-environ = "*"
+djangorestframework = "*"
+django-extensions = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+flake8 = "*"
+pytest = "*"
+pytest-sugar = "*"
+coverage = "*"
+isort = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+git-hooks = "python .git_hooks/git_hooks.py"
+sort-imports = "isort -rc ."
+isort = "isort -rc ."
+linter = "flake8 ."
+test = "./manage.py test carto_test --parallel=3 --settings=config.settings.test"
+pytest = "pytest ."

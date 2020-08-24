@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+export DJANGO_READ_DOT_ENV_FILE=true
+
+# This block is required for VCS commands launched from GUI IDES like Pycharm
+PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+export PATH="$PATH:$PYTHON_BIN_PATH"
+if [[ "$1" != '--no-venv' ]]; then
+    VIRTUALENV_PATH=$(pipenv --venv) && \
+    echo Using virtualenv: $VIRTUALENV_PATH && \
+    source ${VIRTUALENV_PATH}/bin/activate
+fi
+
+pipenv run linter && pipenv run test
