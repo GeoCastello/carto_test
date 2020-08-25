@@ -58,9 +58,12 @@ DJANGO_APPS = [
     'rest_framework',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.gis',
 ]
 THIRD_PARTY_APPS = []
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'carto_test.apps.air_quality',
+]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

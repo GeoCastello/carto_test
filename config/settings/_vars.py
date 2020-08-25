@@ -4,4 +4,6 @@ DEBUG = env('DEBUG', default=False)
 DEBUG_LEVEL = env('DEBUG_LEVEL', default='ERROR').strip()
 
 POSTGRES_HOST = env('POSTGRES_HOST', default='').strip()
-POSTGRES_PORT = env('POSTGRES_PORT', default='')
+POSTGRES_PORT = env('POSTGRES_PORT', default='').strip()
+
+CARTO_USERNAME = env('CARTO_USERNAME', default='').strip()

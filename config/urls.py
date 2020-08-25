@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from rest_framework import routers
 
+from carto_test.apps.air_quality import views as air_quality_views
+
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'air_quality', air_quality_views.AirQualityViewSet, basename='air_quality')
 
 urlpatterns = [
     url(r'^', include(router.urls)),

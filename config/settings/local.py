@@ -22,10 +22,10 @@ INSTALLED_APPS += ['django_extensions', 'django.contrib.staticfiles']
 # ------------------------------------------------------------------------------
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': POSTGRES_DB,
-        'USER': POSTGRES_USER,
-        'PASSWORD': POSTGRES_PASSWORD,
+        'USER': POSTGRES_SUPERUSER,
+        'PASSWORD': POSTGRES_SUPERUSER_PASSWORD,
         'HOST': POSTGRES_HOST,
         'PORT': POSTGRES_PORT
     }

@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "cartodb_id": 116141,
+      "the_geom": "0101000020E61000003335ECC099860DC02F9082AE43404440",
+      "the_geom_webmercator": "0101000020110F000081A8F398851319C190D997E368D75241",
+      "station_id": "aq_alonso_quijano",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:03Z"
+    },
+    {
+      "cartodb_id": 116137,
+      "the_geom": "0101000020E6100000BC428B68824B0DC01B7593ED8B414440",
+      "the_geom_webmercator": "0101000020110F000020AB3BF055E118C1E4FE1B8CD7D85241",
+      "station_id": "aq_distrito_telefonica",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:04Z"
+    },
+    {
+      "cartodb_id": 116135,
+      "the_geom": "0101000020E610000090B88BF2177D0DC05F052D1E32434440",
+      "the_geom_webmercator": "0101000020110F0000E175AC90720B19C11ED01739AFDA5241",
+      "station_id": "aq_ciudad_escolar",
+      "created_at": "2016-11-11T16:18:41Z",
+      "updated_at": "2017-07-01T09:30:05Z"
+    }
+  ],
+  "time": 0.027,
+  "fields": {
+    "cartodb_id": {
+      "type": "number",
+      "pgtype": "int4"
+    },
+    "the_geom": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 4326
+    },
+    "the_geom_webmercator": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 3857
+    },
+    "station_id": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "created_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "updated_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    }
+  },
+  "total_rows": 3
+}
