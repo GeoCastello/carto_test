@@ -1,1 +1,172 @@
-{"rows":[{"station_id":"aq_alcala_zamora","avg":0.517668394001491},{"station_id":"aq_alonso_quijano","avg":0.51743169076508},{"station_id":"aq_aragoneses","avg":0.517275295140925},{"station_id":"aq_camino_del_sur","avg":0.517675710693073},{"station_id":"aq_ciudad_escolar","avg":0.517628608841662},{"station_id":"aq_distrito_telefonica","avg":0.517479508626237},{"station_id":"aq_jaen","avg":0.517430520168271},{"station_id":"aq_nevero","avg":0.517756542665777},{"station_id":"aq_salvia","avg":0.517664315620085},{"station_id":"aq_uam","avg":0.517464066015005}],"time":0.652,"fields":{"station_id":{"type":"string","pgtype":"text"},"avg":{"type":"number","pgtype":"float8"}},"total_rows":10}
+{
+  "rows": [
+    {
+      "station_id": "aq_alcala_zamora",
+      "the_geom": "0101000020E61000003DD3CC22D53B0DC048A96A0CB93F4440",
+      "the_geom_webmercator": "0101000020110F0000199D017705D418C1A1369A0CCED65241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.50590105205159,
+      "population": 6929.5869140625,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_alonso_quijano",
+      "the_geom": "0101000020E61000003335ECC099860DC02F9082AE43404440",
+      "the_geom_webmercator": "0101000020110F000081A8F398851319C190D997E368D75241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.507208142246834,
+      "population": 7444.45458984375,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_aragoneses",
+      "the_geom": "0101000020E61000000043B68966490DC09AF2438E04434440",
+      "the_geom_webmercator": "0101000020110F00004F90206D8BDF18C14E29E9507CDA5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.506117759972342,
+      "population": 4296.31884765625,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_camino_del_sur",
+      "the_geom": "0101000020E6100000A45A0BD1A92A0DC026073703D1414440",
+      "the_geom_webmercator": "0101000020110F00007630CD8470C518C1E7DD22B924D95241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.50658751581004,
+      "population": 2349.74487304688,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_ciudad_escolar",
+      "the_geom": "0101000020E610000090B88BF2177D0DC05F052D1E32434440",
+      "the_geom_webmercator": "0101000020110F0000E175AC90720B19C11ED01739AFDA5241",
+      "created_at": "2016-11-11T16:18:41Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.506621902149457,
+      "population": 3954.89965820312,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_distrito_telefonica",
+      "the_geom": "0101000020E6100000BC428B68824B0DC01B7593ED8B414440",
+      "the_geom_webmercator": "0101000020110F000020AB3BF055E118C1E4FE1B8CD7D85241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.50611843488925,
+      "population": 5205.44775390625,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_jaen",
+      "the_geom": "0101000020E610000041B0969288210DC00329BD0486464440",
+      "the_geom_webmercator": "0101000020110F0000D004297FAFBD18C1D03ECB4067DE5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.507129925508326,
+      "population": 5319.23779296875,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_nevero",
+      "the_geom": "0101000020E6100000C915F85B8F450DC0A157E1DAA2444440",
+      "the_geom_webmercator": "0101000020110F0000D6618D6948DC18C179F93F414BDC5241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.507653045798697,
+      "population": 5083.06591796875,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_salvia",
+      "the_geom": "0101000020E6100000F8272CC8A40E0DC071EAA76DC0434440",
+      "the_geom_webmercator": "0101000020110F0000CE874A75A4AD18C13D17063C4EDB5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.506028661691953,
+      "population": 4353.13916015625,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    },
+    {
+      "station_id": "aq_uam",
+      "the_geom": "0101000020E61000004D64036BF2800DC030E7BC7D51464440",
+      "the_geom_webmercator": "0101000020110F00003D90F95FB80E19C189E58A8A2CDE5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.506201799756575,
+      "population": 3456.93383789062,
+      "start_time": "2016-10-05T11:00:00Z",
+      "end_time": "2016-11-11T17:47:17Z"
+    }
+  ],
+  "time": 0.104,
+  "fields": {
+    "station_id": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "the_geom": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 4326
+    },
+    "the_geom_webmercator": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 3857
+    },
+    "created_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "updated_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "measure_type": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "measure": {
+      "type": "number",
+      "pgtype": "float8"
+    },
+    "population": {
+      "type": "number",
+      "pgtype": "float8"
+    },
+    "start_time": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "end_time": {
+      "type": "string",
+      "pgtype": "text"
+    }
+  },
+  "total_rows": 10
+}

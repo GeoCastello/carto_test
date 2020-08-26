@@ -11,3 +11,4 @@ class MeasurementsStatistics(models.Model):
     measure = models.FloatField()
     start_time = models.CharField(max_length=30)
     end_time = models.CharField(max_length=30)
+    population = models.FloatField(null=True)

@@ -14,12 +14,16 @@ class TestAssemblers(TestCase):
         }
 
         expected_result = "SELECT s.station_id, s.the_geom, s.the_geom_webmercator, s.created_at, " \
-                          "s.updated_at, AVG(m.co) AS measure " \
+                          "s.updated_at, 'AVG' AS measure_type, AVG(m.co) AS measure, g.population, " \
+                          "'2016-10-05T11:00:00Z' AS start_time, '2016-11-11T17:47:17Z' AS end_time " \
                           "FROM aasuero.test_airquality_measurements m " \
                           "INNER JOIN aasuero.test_airquality_stations s ON m.station_id = s.station_id " \
+                          "INNER JOIN aasuero.esp_grid_1km_demographics g " \
+                          "ON ST_Intersects(s.the_geom_webmercator, g.the_geom_webmercator) " \
                           "WHERE m.timeinstant BETWEEN '2016-10-05T11:00:00Z'::timestamp with time zone AND " \
                           "'2016-11-11T17:47:17Z'::timestamp with time zone " \
-                          "GROUP BY s.station_id, s.the_geom, s.the_geom_webmercator, s.created_at, s.updated_at"
+                          "GROUP BY s.station_id, s.the_geom, s.the_geom_webmercator, s.created_at, " \
+                          "s.updated_at, g.population"
         assembled_query = query_assembler(statistics_request)
 
         self.assertEqual.__self__.maxDiff = None
