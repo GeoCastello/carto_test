@@ -1,14 +1,23 @@
+import pytz
 from rest_framework import serializers
+
+POSSIBLE_VARIABLES = ['co', 'no2', 'o3', 'pm10', 'pm2_5', 'so2']
+POSSIBLE_STATISTICS = ['AVG', 'MAX', 'MIN', 'SUM', 'MODE', 'PERCENTILE_CONT', 'PERCENTILE_DISC']
 
 
 class StatisticsSerializer(serializers.Serializer):
-    POSSIBLE_VARIABLES = ['co', 'no2', 'o3', 'pm10', 'pm2_5', 'so2']
-    POSSIBLE_STATISTICS = ['AVG', 'MAX', 'MIN', 'SUM', 'MODE', 'PERCENTILE_CONT', 'PERCENTILE_DISC']
-    date_regex = '^((19|20)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][1-9]|[2][0-3])[:]' \
-                 '([0-5][0-9])[:]([0-5][0-9]Z)'
+    start_time = serializers.DateTimeField(default_timezone=pytz.utc)
+    end_time = serializers.DateTimeField(default_timezone=pytz.utc)
+    variable = serializers.ChoiceField(choices=POSSIBLE_VARIABLES, default='co')
+    statistical_measurement = serializers.ChoiceField(choices=POSSIBLE_STATISTICS, default='AVG')
+    store = serializers.BooleanField(required=False, default=False)
 
-    start_time = serializers.RegexField(regex=date_regex)
-    end_time = serializers.RegexField(regex=date_regex)
-    variable = serializers.ChoiceField(choices=POSSIBLE_VARIABLES, default='co2')
-    statistical_measurement = serializers.ChoiceField(choices=POSSIBLE_STATISTICS, default='avg')
+
+class TimeSeriesSerializer(serializers.Serializer):
+    POSSIBLE_STEPS = ['1 hour', '1 day', '1 week']
+    start_time = serializers.DateTimeField(default_timezone=pytz.utc)
+    end_time = serializers.DateTimeField(default_timezone=pytz.utc)
+    variable = serializers.ChoiceField(choices=POSSIBLE_VARIABLES, default='co')
+    statistical_measurement = serializers.ChoiceField(choices=POSSIBLE_STATISTICS, default='AVG')
+    step = serializers.ChoiceField(choices=POSSIBLE_STEPS, default='1 hour')
     store = serializers.BooleanField(required=False, default=False)

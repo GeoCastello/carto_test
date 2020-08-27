@@ -12,8 +12,8 @@ class Paths:
 
 
 class StatisticsProvider:
-    def __init__(self, statistics_request: dict):
-        self.statistics_request = statistics_request
+    def __init__(self, statistics_params: dict):
+        self.statistics_params = statistics_params
         self.client = ExternalServiceClient(Paths.base_path, map_exceptions=True)
 
     @staticmethod
@@ -32,11 +32,11 @@ class StatisticsProvider:
             measurement.save()
 
     def get_statistics_from_carto(self) -> json:
-        query = query_assembler(self.statistics_request)
+        query = query_assembler(self.statistics_params)
         full_url = Paths.sql + query
         res = requests.get(full_url)
 
-        if 'store' in self.statistics_request.keys() and self.statistics_request['store']:
+        if 'store' in self.statistics_params.keys() and self.statistics_params['store']:
             self.store_in_local_db(res.json())
 
         return res.json()

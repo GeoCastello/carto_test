@@ -1,0 +1,378 @@
+{
+  "rows": [
+    {
+      "station_id": "aq_alcala_zamora",
+      "the_geom": "0101000020E61000003DD3CC22D53B0DC048A96A0CB93F4440",
+      "the_geom_webmercator": "0101000020110F0000199D017705D418C1A1369A0CCED65241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.486542900986742,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_alcala_zamora",
+      "the_geom": "0101000020E61000003DD3CC22D53B0DC048A96A0CB93F4440",
+      "the_geom_webmercator": "0101000020110F0000199D017705D418C1A1369A0CCED65241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.54881710568865,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_alcala_zamora",
+      "the_geom": "0101000020E61000003DD3CC22D53B0DC048A96A0CB93F4440",
+      "the_geom_webmercator": "0101000020110F0000199D017705D418C1A1369A0CCED65241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.474162909302562,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_alonso_quijano",
+      "the_geom": "0101000020E61000003335ECC099860DC02F9082AE43404440",
+      "the_geom_webmercator": "0101000020110F000081A8F398851319C190D997E368D75241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.489145381129427,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_alonso_quijano",
+      "the_geom": "0101000020E61000003335ECC099860DC02F9082AE43404440",
+      "the_geom_webmercator": "0101000020110F000081A8F398851319C190D997E368D75241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.547790119189196,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_alonso_quijano",
+      "the_geom": "0101000020E61000003335ECC099860DC02F9082AE43404440",
+      "the_geom_webmercator": "0101000020110F000081A8F398851319C190D997E368D75241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.473874151643687,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_aragoneses",
+      "the_geom": "0101000020E61000000043B68966490DC09AF2438E04434440",
+      "the_geom_webmercator": "0101000020110F00004F90206D8BDF18C14E29E9507CDA5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.487559021444607,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_aragoneses",
+      "the_geom": "0101000020E61000000043B68966490DC09AF2438E04434440",
+      "the_geom_webmercator": "0101000020110F00004F90206D8BDF18C14E29E9507CDA5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.549898592048203,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_aragoneses",
+      "the_geom": "0101000020E61000000043B68966490DC09AF2438E04434440",
+      "the_geom_webmercator": "0101000020110F00004F90206D8BDF18C14E29E9507CDA5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.472513686707569,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_camino_del_sur",
+      "the_geom": "0101000020E6100000A45A0BD1A92A0DC026073703D1414440",
+      "the_geom_webmercator": "0101000020110F00007630CD8470C518C1E7DD22B924D95241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.487631141372178,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_camino_del_sur",
+      "the_geom": "0101000020E6100000A45A0BD1A92A0DC026073703D1414440",
+      "the_geom_webmercator": "0101000020110F00007630CD8470C518C1E7DD22B924D95241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.549730361545809,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_camino_del_sur",
+      "the_geom": "0101000020E6100000A45A0BD1A92A0DC026073703D1414440",
+      "the_geom_webmercator": "0101000020110F00007630CD8470C518C1E7DD22B924D95241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.474954702572722,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_ciudad_escolar",
+      "the_geom": "0101000020E610000090B88BF2177D0DC05F052D1E32434440",
+      "the_geom_webmercator": "0101000020110F0000E175AC90720B19C11ED01739AFDA5241",
+      "created_at": "2016-11-11T16:18:41Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.488535584768035,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_ciudad_escolar",
+      "the_geom": "0101000020E610000090B88BF2177D0DC05F052D1E32434440",
+      "the_geom_webmercator": "0101000020110F0000E175AC90720B19C11ED01739AFDA5241",
+      "created_at": "2016-11-11T16:18:41Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.548044017872943,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_ciudad_escolar",
+      "the_geom": "0101000020E610000090B88BF2177D0DC05F052D1E32434440",
+      "the_geom_webmercator": "0101000020110F0000E175AC90720B19C11ED01739AFDA5241",
+      "created_at": "2016-11-11T16:18:41Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.475427923377502,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_distrito_telefonica",
+      "the_geom": "0101000020E6100000BC428B68824B0DC01B7593ED8B414440",
+      "the_geom_webmercator": "0101000020110F000020AB3BF055E118C1E4FE1B8CD7D85241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.486104261721735,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_distrito_telefonica",
+      "the_geom": "0101000020E6100000BC428B68824B0DC01B7593ED8B414440",
+      "the_geom_webmercator": "0101000020110F000020AB3BF055E118C1E4FE1B8CD7D85241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.549293979712313,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_distrito_telefonica",
+      "the_geom": "0101000020E6100000BC428B68824B0DC01B7593ED8B414440",
+      "the_geom_webmercator": "0101000020110F000020AB3BF055E118C1E4FE1B8CD7D85241",
+      "created_at": "2016-11-11T16:18:40Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.473417303016633,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_jaen",
+      "the_geom": "0101000020E610000041B0969288210DC00329BD0486464440",
+      "the_geom_webmercator": "0101000020110F0000D004297FAFBD18C1D03ECB4067DE5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.489183071961041,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_jaen",
+      "the_geom": "0101000020E610000041B0969288210DC00329BD0486464440",
+      "the_geom_webmercator": "0101000020110F0000D004297FAFBD18C1D03ECB4067DE5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.548980494906194,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_jaen",
+      "the_geom": "0101000020E610000041B0969288210DC00329BD0486464440",
+      "the_geom_webmercator": "0101000020110F0000D004297FAFBD18C1D03ECB4067DE5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:03Z",
+      "measure_type": "AVG",
+      "measure": 0.472136362978889,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_nevero",
+      "the_geom": "0101000020E6100000C915F85B8F450DC0A157E1DAA2444440",
+      "the_geom_webmercator": "0101000020110F0000D6618D6948DC18C179F93F414BDC5241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.488562749510163,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_nevero",
+      "the_geom": "0101000020E6100000C915F85B8F450DC0A157E1DAA2444440",
+      "the_geom_webmercator": "0101000020110F0000D6618D6948DC18C179F93F414BDC5241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.54837308014811,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_nevero",
+      "the_geom": "0101000020E6100000C915F85B8F450DC0A157E1DAA2444440",
+      "the_geom_webmercator": "0101000020110F0000D6618D6948DC18C179F93F414BDC5241",
+      "created_at": "2016-11-11T16:18:43Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.473077592394838,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_salvia",
+      "the_geom": "0101000020E6100000F8272CC8A40E0DC071EAA76DC0434440",
+      "the_geom_webmercator": "0101000020110F0000CE874A75A4AD18C13D17063C4EDB5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.487380437732852,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_salvia",
+      "the_geom": "0101000020E6100000F8272CC8A40E0DC071EAA76DC0434440",
+      "the_geom_webmercator": "0101000020110F0000CE874A75A4AD18C13D17063C4EDB5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.549041410115854,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_salvia",
+      "the_geom": "0101000020E6100000F8272CC8A40E0DC071EAA76DC0434440",
+      "the_geom_webmercator": "0101000020110F0000CE874A75A4AD18C13D17063C4EDB5241",
+      "created_at": "2016-11-11T16:18:39Z",
+      "updated_at": "2017-07-01T09:30:05Z",
+      "measure_type": "AVG",
+      "measure": 0.472537653187541,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    },
+    {
+      "station_id": "aq_uam",
+      "the_geom": "0101000020E61000004D64036BF2800DC030E7BC7D51464440",
+      "the_geom_webmercator": "0101000020110F00003D90F95FB80E19C189E58A8A2CDE5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.486974378543036,
+      "start_time": "2016-11-05T16:15:00Z",
+      "end_time": "2016-11-12T16:15:00Z"
+    },
+    {
+      "station_id": "aq_uam",
+      "the_geom": "0101000020E61000004D64036BF2800DC030E7BC7D51464440",
+      "the_geom_webmercator": "0101000020110F00003D90F95FB80E19C189E58A8A2CDE5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.54921289828728,
+      "start_time": "2016-11-12T16:15:00Z",
+      "end_time": "2016-11-19T16:15:00Z"
+    },
+    {
+      "station_id": "aq_uam",
+      "the_geom": "0101000020E61000004D64036BF2800DC030E7BC7D51464440",
+      "the_geom_webmercator": "0101000020110F00003D90F95FB80E19C189E58A8A2CDE5241",
+      "created_at": "2016-11-11T16:18:42Z",
+      "updated_at": "2017-07-01T09:30:04Z",
+      "measure_type": "AVG",
+      "measure": 0.472670101960187,
+      "start_time": "2016-11-19T16:15:00Z",
+      "end_time": "2016-11-26T16:15:00Z"
+    }
+  ],
+  "time": 0.212,
+  "fields": {
+    "station_id": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "the_geom": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 4326
+    },
+    "the_geom_webmercator": {
+      "type": "geometry",
+      "wkbtype": "Unknown",
+      "dims": 2,
+      "srid": 3857
+    },
+    "created_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "updated_at": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "measure_type": {
+      "type": "string",
+      "pgtype": "text"
+    },
+    "measure": {
+      "type": "number",
+      "pgtype": "float8"
+    },
+    "start_time": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    },
+    "end_time": {
+      "type": "date",
+      "pgtype": "timestamptz"
+    }
+  },
+  "total_rows": 30
+}

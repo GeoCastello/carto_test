@@ -13,6 +13,9 @@ def get_mocked_data(data_type: str = 'stations') -> json:
     elif data_type == 'measurements':
         with open(f'{current_path}/test_airquality_measurements.json', 'r', encoding='utf-8') as file:
             return json.load(file)
+    elif data_type == 'timeseries':
+        with open(f'{current_path}/test_airquality_timeseries.json', 'r', encoding='utf-8') as file:
+            return json.load(file)
 
 
 class CartoServicesMock(ExternalServiceClientMock):

@@ -7,15 +7,15 @@ def query_assembler(statistics_dict: dict) -> json:
     query = f"SELECT s.station_id, s.the_geom, s.the_geom_webmercator, s.created_at, s.updated_at, " \
             f"'{statistics_dict['statistical_measurement']}' AS measure_type, " \
             f"{statistics_dict['statistical_measurement']}(m.{statistics_dict['variable']}) AS measure, " \
-            f"g.population, '{start_time}' AS start_time, " \
-            f"'{end_time}' AS end_time " \
+            f"t.start_time, t.end_time " \
             f"FROM aasuero.test_airquality_measurements m " \
             f"INNER JOIN aasuero.test_airquality_stations s ON m.station_id = s.station_id " \
-            f"INNER JOIN aasuero.esp_grid_1km_demographics g " \
-            f"ON ST_Intersects(s.the_geom_webmercator, g.the_geom_webmercator) " \
-            f"WHERE m.timeinstant BETWEEN '{start_time}'::timestamp with time zone AND " \
-            f"'{end_time}'::timestamp with time zone " \
+            f"JOIN (SELECT times AS start_time, lead(times) over (order by times) as end_time " \
+            f"FROM generate_series('{start_time}'::timestamp with time zone, " \
+            f"'{end_time}'::timestamp with time zone, '{statistics_dict['step']}') times) t " \
+            f"ON m.timeinstant BETWEEN t.start_time AND t.end_time " \
             f"GROUP BY s.station_id, s.the_geom, s.the_geom_webmercator, s.created_at, " \
-            f"s.updated_at, g.population"
+            f"s.updated_at, t.start_time, t.end_time " \
+            f"ORDER BY s.station_id, t.start_time"
 
     return query
