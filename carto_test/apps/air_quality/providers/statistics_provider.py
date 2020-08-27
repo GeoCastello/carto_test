@@ -2,8 +2,7 @@ import requests
 from rest_framework.utils import json
 
 from carto_test.apps.air_quality.models import MeasurementsStatistics
-from carto_test.apps.air_quality.providers.statistics_assemblers import query_assembler
-from carto_test.utils.external_service_client.external_service_client import ExternalServiceClient
+from carto_test.apps.air_quality.providers.assemblers import statistics_query_assembler
 
 
 class Paths:
@@ -14,7 +13,6 @@ class Paths:
 class StatisticsProvider:
     def __init__(self, statistics_params: dict):
         self.statistics_params = statistics_params
-        self.client = ExternalServiceClient(Paths.base_path, map_exceptions=True)
 
     @staticmethod
     def store_in_local_db(data: dict):
@@ -32,7 +30,7 @@ class StatisticsProvider:
             measurement.save()
 
     def get_statistics_from_carto(self) -> json:
-        query = query_assembler(self.statistics_params)
+        query = statistics_query_assembler(self.statistics_params)
         full_url = Paths.sql + query
         res = requests.get(full_url)
 

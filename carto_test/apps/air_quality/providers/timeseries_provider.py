@@ -2,8 +2,7 @@ import requests
 from rest_framework.utils import json
 
 from carto_test.apps.air_quality.models import TimeSeries
-from carto_test.apps.air_quality.providers.timeseries_assemblers import query_assembler
-from carto_test.utils.external_service_client.external_service_client import ExternalServiceClient
+from carto_test.apps.air_quality.providers.assemblers import timeseries_query_assembler
 
 
 class Paths:
@@ -14,7 +13,6 @@ class Paths:
 class TimeSeriesProvider:
     def __init__(self, timeseries_params: dict):
         self.timeseries_params = timeseries_params
-        self.client = ExternalServiceClient(Paths.base_path, map_exceptions=True)
 
     @staticmethod
     def store_in_local_db(data: dict):
@@ -31,7 +29,7 @@ class TimeSeriesProvider:
             measurement.save()
 
     def get_timeseries_from_carto(self) -> json:
-        query = query_assembler(self.timeseries_params)
+        query = timeseries_query_assembler(self.timeseries_params)
         full_url = Paths.sql + query
         res = requests.get(full_url)
 
