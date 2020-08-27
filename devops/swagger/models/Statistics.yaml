@@ -1,0 +1,46 @@
+type: "object"
+properties:
+  params:
+    type: object
+    properties:
+      start_time:
+        type: datetime
+        required: true
+      end_time:
+        type: datetime
+        required: true
+      variable:
+        type: string
+        required: true
+      statistical_measurement:
+        type: string
+        required: true
+      store:
+        type: boolean
+        required: false
+      filters:
+        type: object
+        required: false
+        properties:
+          stations:
+            type: array
+            required: false
+            items:
+              type: string
+          geometries:
+            type: array
+            required: false
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                coordinates:
+                  type:
+                    array
+                  items:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: float

@@ -1,0 +1,93 @@
+swagger: "2.0"
+info:
+  description: "This is the backend carto_test REST API for CARTO Tech Test"
+  version: "1.0.0"
+  title: "CARTO - carto_test"
+host: "{{ host }}"
+x-google-endpoints:
+  - name: "{{ host }}"
+    target: "{{ ip }}"
+    allowCors: "true"
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  aad_custom:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: "{{ auth_issuer }}"
+    x-google-jwks_uri: "{{ auth_jwks_uri }}"
+    x-google-audiences: "{{ auth_audiences }}"
+tags:
+  - name: "statistics"
+    description: "Air quality statistics"
+  - name: "timeseries"
+    description: "Air quality timeseries"
+
+
+schemes:
+  - "https"
+
+
+paths:
+  ### statistics
+
+  air_quality/statistics:
+    post:
+      operationId: air_qualityStatistics
+      tags:
+        - "statistics"
+      summary: "Request statistics from air quality dataset"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: params
+          in: body
+          schema:
+            $ref: "models/Statistics.yaml"
+          description: Statistics parameters
+      responses:
+        200:
+          description: Successful operation
+          schema:
+            $ref: "models/StatisticsResponse.yaml"
+        400:
+          description: Bad Request
+        404:
+          description: Not Found
+        405:
+          description: Method not allowed
+
+    ### timeseries
+
+  air_quality/timeseries:
+    post:
+      operationId: air_qualityTimeSeries
+      tags:
+        - "timeseries"
+      summary: "Request timeseries from air quality dataset"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: params
+          in: body
+          schema:
+            $ref: "models/TimeSeries.yaml"
+          description: Statistics parameters
+      responses:
+        200:
+          description: Successful operation
+          schema:
+            $ref: "models/TimeseriesResponse.yaml"
+        400:
+          description: Bad Request
+        404:
+          description: Not Found
+        405:
+          description: Method not allowed

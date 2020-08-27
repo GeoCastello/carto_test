@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: swagger-ui-carto_test-service
+spec:
+  ports:
+     -  port: 80
+        protocol: TCP
+  selector:
+    app: swagger-ui-carto_test
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: swagger-ui-carto_test
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: swagger-ui-carto_test
+    spec:
+      nodeSelector:
+        security-zone: front
+      volumes:
+        - name: disable-ipv6-resolution-config-volume
+          configMap:
+            name: disable-ipv6-resolution-config
+            defaultMode: 420
+      containers:
+      - name: swagger-ui-carto_test
+        image: gcr.io/m-itg-213307/swagger-ui-carto_test:latest
+        ports:
+        - containerPort: 80
+
+        volumeMounts:
+        - mountPath: /etc/gai.conf
+          name: disable-ipv6-resolution-config-volume
+          subPath: gai.conf

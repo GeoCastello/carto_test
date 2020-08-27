@@ -1,0 +1,103 @@
+type: "object"
+properties:
+  rows:
+    type: array
+    items:
+      type: object
+      properties:
+        station_id:
+          type: string
+        the_geom:
+          type: well-known binary
+        the_geom_webmercator:
+          type: well-known binary
+        created_at:
+          type: datetime
+        updated_at:
+          type: datetime
+        measure_type:
+          type: string
+        measure:
+          type: float
+        start_time:
+          type: datetime
+        end_time:
+          type: datetime
+  time:
+    type: float
+  fields:
+    type: object
+    properties:
+      station_id:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      the_geom:
+        type: object
+        properties:
+          type:
+            type: string
+          wkbtype:
+            type: string
+          dims:
+            type: integer
+          srid:
+            type: integer
+      the_geom_webmercator:
+        type: object
+        properties:
+          type:
+            type: string
+          wkbtype:
+            type: string
+          dims:
+            type: integer
+          srid:
+            type: integer
+      created_at:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      updated_at:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      measure_type:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      measure:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      start_time:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+      end_time:
+        type: object
+        properties:
+          type:
+            type: string
+          pgtype:
+            type: string
+  total_rows:
+    type: integer
