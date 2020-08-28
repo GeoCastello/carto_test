@@ -1,0 +1,13 @@
+.*
+setup.cfg
+devops
+coverage.xml
+*.md
+*.yaml
+*.properties
+Jenkinsfile
+Dockerfile
+run_tests.sh
+!devops/start-production-server.sh
+!devops/swagger/*
+!devops/swagger-ui/*

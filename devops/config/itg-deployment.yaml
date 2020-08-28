@@ -1,0 +1,7 @@
+# THIS IS AN EXAMPLE TEMPLATE FILE
+service: back-carto_test.endpoints.<gcloud_container_name>.cloud.goog
+image: gcr.io/<gcloud_container_name>/carto_test_back:latest
+nodeSelector: true
+replicas: 3
+affinity: true
+modeloLoadBalancerIP: <IP>

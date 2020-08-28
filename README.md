@@ -19,7 +19,9 @@ or [PostgreSQL](https://www.postgresql.org/) and [PostGIS](https://postgis.net/)
 
 1. Clone the repository
 2. Install pipenv: `pip3 install pipenv`    
-3. Run `pipenv install --dev` from the root folder of the repository
+3. Run `pipenv install --dev` from the root folder of the repository.
+You might have an error with psycopg2. In that case, remove its line from Pipfile, execute the command again and then run
+`pipenv install psycopg2`.
 4. Run `pipenv run git-hooks` to auto install `pre-commit` and `pre-push` git hooks
 5. Set the environment variable `DJANGO_READ_DOT_ENV_FILE=true`
 6. Check that you have 2 files in `.envs/local`
@@ -62,13 +64,91 @@ In case the script keeps failing, execute once with `sudo` and then again withou
     For django to load them at start, set the environment variable `export DJANGO_READ_DOT_ENV_FILE=true`
     - Set the environment variable `export DJANGO_SETTINGS_MODULE=config.settings.local`
     - `python manage.py runserver 0.0.0.0:8000`
+    
 
 
-### Swagger
-I've used [swagger](https://swagger.io/docs/) to define the API and [swagger-ui](https://swagger.io/tools/swagger-ui/) to
+## Google Cloud Platform deployment
+
+### Requirements
+
+All the local development requirements, plus:
+
+- [gcloud SDK](https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- If you need to expose a new endpoint or make changes to an existing one, you must redeploy the API definition
+Swagger file. The swagger API definition files are under `devops/swagger`.
+
+
+### Steps
+
+#### 1. Docker image
+
+1. Build the docker image. 
+Given that your are in project's root folder:
+
+    ```bash
+    docker build -t carto_test_back .
+    ```
+
+2. Push the image to the registry:
+
+    ```bash
+    docker push <google cloud container>/carto_test_back:latest
+    ```
+
+    (You might need to get credentials first: `gcloud auth configure-docker`)
+
+1. Set-up `gcloud` with your account credentials and select the project where you'll be deploying. Also, you need
+to get authentication credentials for the cluster. 
+
+Follow the [quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart).
+
+#### 2. Kubernetes
+
+1. You must generate the yaml deployment file from the template in 
+`devops/deployment-template.yaml` with the configuration settings of the desired environment. For example, 
+for `itg` environment:
+
+    ```
+    python3 generate_config.py -d devops --template deployment-template.yaml --config devops/config/itg-deployment.yaml deployment.yaml
+    ```
+
+1. Once you have generated the deployment file from the template, you apply it with:
+    
+    ```
+    kubectl apply -f back-carto_test-deployment.yaml
+    ```
+
+1. To manually update the image in the deployment:
+    
+    ```
+    kubectl set image deployment/esp-carto_test_back carto_test=gcr.io/<gcloud container name>/carto_test_back:latest
+    ```
+
+    If the image has the same tag, yoy might need to patch the deployment instead:
+
+    ```
+    kubectl patch deployment esp-carto_test -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
+    ```
+
+#### 3. Google Endpoints and Swagger
+
+[swagger](https://swagger.io/docs/) is used to define the API and [swagger-ui](https://swagger.io/tools/swagger-ui/) to
 expose the documentation. The swagger files are under `devops/swagger`, you can use them right away in
 swagger-ui to see and validate the definition. For convenience, there is a script in `devops/swagger-ui/swagger-server.sh`
-that starts a swagger-ui Docker container serving those files. 
+that starts a swagger-ui Docker container serving those files. Google Endpoints, Google Cloud's API manager, 
+supports OpenAPI 2.0 definition, but with some
+ [limitations](https://cloud.google.com/endpoints/docs/openapi/openapi-limitations)).
+
+**Notes on developing the Swagger definition:**
+
+- Path definitions should be placed in `swagger-template.yaml`
+
+- Each model definition should be in its own individual yaml file, under `models`. If some entity or endpoint has
+several models, it is convenient to create a subfolder to group them all (for example, `models/air_quality`).
+
+The Jenins/CI system automatically generates a deployable `swagger.yaml` file so that you do not have to worry about
+doing so. 
 
 
 ## Test and linter

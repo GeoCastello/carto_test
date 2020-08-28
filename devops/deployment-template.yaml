@@ -1,0 +1,173 @@
+# carto_test via ESP
+apiVersion: v1
+kind: Service
+metadata:
+  name: esp-carto_test-service
+spec:
+  ports:
+     -  port: 8081
+        protocol: TCP
+  selector:
+    app: esp-carto_test
+  type: NodePort
+---
+# internal direct to back
+apiVersion: v1
+kind: Service
+metadata:
+  name: back-carto_test-service
+spec:
+  ports:
+     -  port: 80
+        protocol: TCP
+        targetPort: 5000
+  selector:
+    app: esp-carto_test
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: esp-carto_test
+spec:
+  replicas: {{ replicas }}
+  revisionHistoryLimit: 15
+  template:
+    metadata:
+      labels:
+        app: esp-carto_test
+    spec:
+      {% if affinity %}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - esp-carto_test
+              topologyKey: kubernetes.io/hostname
+      {% endif %}
+      {% if nodeSelector %}
+      nodeSelector:
+        security-zone: back
+      {% endif %}
+      volumes:
+      - name: nginx-ssl
+        secret:
+          secretName: nginx-ssl
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: cloudsql-instance-credentials
+      - name: google-cloud-translate
+        secret:
+          secretName: google-cloud-translate
+      - name: service-account-creds
+        secret:
+          secretName: service-account-creds
+      containers:
+
+      - name: esp
+        image: gcr.io/endpoints-release/endpoints-runtime:1
+        args: [
+          "--healthz", "healthz",
+          "--http_port", "8081",
+          "--ssl_port", "443",
+          "--ssl_protocols", "TLSv1.2",
+          "--ssl_protocols", "TLSv1.3",
+          "--backend", "127.0.0.1:5000",
+          "--service", "{{ service }}",
+          "--rollout_strategy", "managed",
+          "--cors_preset", "basic",
+          "--cors_allow_origin", "*",
+          "--cors_allow_headers", "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,enctype,App-Version",
+          "--enable_strict_transport_security",
+          "--service_account_key", "/etc/nginx/creds/service-account-creds.json",
+        ]
+        ports:
+        - containerPort: 8081
+        - containerPort: 443
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+        volumeMounts:
+        - mountPath: /etc/nginx/ssl
+          name: nginx-ssl
+          readOnly: true
+        - mountPath: /etc/nginx/creds
+          name: service-account-creds
+          readOnly: true
+
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        envFrom:
+          - configMapRef:
+              name: cloud-sql-proxy-envs
+        command: ["sh", "-c", "/cloud_sql_proxy -instances=$INSTANCE_CONNECTION_NAME=tcp:5432 -credential_file=/secrets/cloudsql/credentials.json"]
+        securityContext:
+          runAsUser: 2  # non-root user
+          allowPrivilegeEscalation: false
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+
+      - name: backend-carto_test
+        image: {{ image }}
+        volumeMounts:
+          - name: google-cloud-translate
+            mountPath: /app/.envs
+        imagePullPolicy: "Always"
+        command: ["/start"]
+        readinessProbe:
+          httpGet:
+            path: /health-check
+            port: 8081
+        livenessProbe:
+          httpGet:
+            path: /health-check
+            port: 8081
+        ports:
+        - containerPort: 5000
+        envFrom:
+          - configMapRef:
+              name: back-carto_test-envs
+        env:
+        - name: DJANGO_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: back-carto_test-secrets
+              key: DJANGO_SECRET_KEY
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: back-carto_test-secrets
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: back-carto_test-secrets
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: back-carto_test-secrets
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_SUPERUSER
+            valueFrom:
+              secretKeyRef:
+                name: back-carto_test-secrets
+                key: POSTGRES_SUPERUSER
+        - name: POSTGRES_SUPERUSER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: back-carto_test-secrets
+              key: POSTGRES_SUPERUSER_PASSWORD
